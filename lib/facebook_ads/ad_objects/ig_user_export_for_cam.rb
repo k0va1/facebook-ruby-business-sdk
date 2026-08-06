@@ -539,6 +539,8 @@ module FacebookAds
     ]
 
     PLATFORM = [
+      "any",
+      "both",
       "facebook",
       "instagram",
     ]
@@ -585,7 +587,7 @@ module FacebookAds
         api.has_param :breakdown, { enum: %w{AGE FOLLOW_TYPE GENDER MEDIA_TYPE TOP_CITIES TOP_COUNTRIES }}
         api.has_param :metrics, { list: { enum: %w{CREATOR_ENGAGED_ACCOUNTS CREATOR_REACH REELS_HOOK_RATE REELS_INTERACTION_RATE TOTAL_FOLLOWERS }} }
         api.has_param :period, { enum: %w{DAY OVERALL }}
-        api.has_param :platform, { list: { enum: %w{FACEBOOK INSTAGRAM }} }
+        api.has_param :platform, { list: { enum: %w{ANY BOTH FACEBOOK INSTAGRAM }} }
         api.has_param :time_range, { enum: %w{LAST_14_DAYS LAST_90_DAYS LIFETIME THIS_MONTH THIS_WEEK }}
       end
     end

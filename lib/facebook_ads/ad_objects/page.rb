@@ -84,16 +84,29 @@ module FacebookAds
       "C2PA",
       "C2PA_METADATA_EDITED",
       "EXPLICIT",
+      "EXPLICIT_AI_CUT",
+      "EXPLICIT_AI_EDIT",
+      "EXPLICIT_AI_EDIT_PRESETS_SHEET",
+      "EXPLICIT_AI_EXPANDER",
+      "EXPLICIT_AI_REWRITE_WITH_META_AI_INTENT",
+      "EXPLICIT_AI_TRANSITION",
+      "EXPLICIT_AI_V2V_RESTYLE",
       "EXPLICIT_ANIMATE",
+      "EXPLICIT_CLIPGEN",
+      "EXPLICIT_CUTOUT",
       "EXPLICIT_DROP_IN",
       "EXPLICIT_FACE_SWAP",
       "EXPLICIT_IMAGINE",
       "EXPLICIT_IMAGINE_ME",
+      "EXPLICIT_MAGIC_CUT",
       "EXPLICIT_RESTYLE",
+      "EXPLICIT_RESTYLE_EFFECTS_MERGE",
+      "EXPLICIT_SUBJECT_EFFECT",
       "EXPLICIT_WARDROBE",
       "INVISIBLE_WATERMARK",
       "IPTC",
       "IPTC_METADATA_EDITED",
+      "NONE",
     ]
 
     PICKUP_OPTIONS = [
@@ -1582,6 +1595,7 @@ module FacebookAds
       edge.post 'AdVideo' do |api|
         api.has_param :description, 'string'
         api.has_param :feed_targeting, 'object'
+        api.has_param :is_ai_generated, 'bool'
         api.has_param :place, 'string'
         api.has_param :scheduled_publish_time, 'datetime'
         api.has_param :targeting, 'object'
@@ -1596,6 +1610,7 @@ module FacebookAds
       edge.post do |api|
         api.has_param :description, 'string'
         api.has_param :feed_targeting, 'object'
+        api.has_param :is_ai_generated, 'bool'
         api.has_param :place, 'string'
         api.has_param :scheduled_publish_time, 'datetime'
         api.has_param :targeting, 'object'
@@ -1651,6 +1666,7 @@ module FacebookAds
         api.has_param :initial_heading, 'int'
         api.has_param :initial_pitch, 'int'
         api.has_param :instant_game_entry_point_data, 'string'
+        api.has_param :is_ai_generated, 'bool'
         api.has_param :is_boost_intended, 'bool'
         api.has_param :is_explicit_share, 'bool'
         api.has_param :is_group_linking_post, 'bool'

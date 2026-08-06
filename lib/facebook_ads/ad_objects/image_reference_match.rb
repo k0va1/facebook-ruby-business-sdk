@@ -26,10 +26,10 @@ module FacebookAds
     field :id, 'string'
     field :match_state, 'string'
     field :matched_reference_copyright, 'ImageCopyright'
-    field :matched_reference_owner, 'Profile'
+    field :matched_reference_owner_rh_owner, 'object'
     field :modification_history, { list: 'object' }
     field :reference_copyright, 'ImageCopyright'
-    field :reference_owner, 'Profile'
+    field :reference_owner_rh_owner, 'object'
     field :rejection_form_data_entries_with_translations, { list: 'object' }
     field :resolution_reason, 'string'
     field :update_time, 'datetime'

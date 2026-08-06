@@ -51,8 +51,6 @@ module FacebookAds
     ]
 
 
-    field :daily_outcomes_curve, { list: 'OutcomePredictionPoint' }
-    field :estimate_dau, 'int'
     field :estimate_mau_lower_bound, 'int'
     field :estimate_mau_upper_bound, 'int'
     field :estimate_ready, 'bool'

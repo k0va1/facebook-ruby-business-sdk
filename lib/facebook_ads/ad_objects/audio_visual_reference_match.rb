@@ -32,13 +32,13 @@ module FacebookAds
     field :match_state, 'string'
     field :matched_overlap_percentage, 'double'
     field :matched_owner_match_duration_in_sec, 'double'
-    field :matched_reference_owner, 'Profile'
+    field :matched_reference_owner_v2, 'object'
     field :modification_history, { list: 'object' }
     field :num_matches_on_matched_side, 'int'
     field :num_matches_on_ref_side, 'int'
     field :ref_owner_match_duration_in_sec, 'double'
     field :reference_overlap_percentage, 'double'
-    field :reference_owner, 'Profile'
+    field :reference_owner_v2, 'object'
     field :rejection_form_data_entries_with_translations, { list: 'object' }
     field :resolution_details, 'string'
     field :resolution_reason, 'string'

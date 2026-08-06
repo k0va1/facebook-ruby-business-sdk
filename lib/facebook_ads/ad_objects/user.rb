@@ -622,6 +622,7 @@ module FacebookAds
         api.has_param :initial_heading, 'int'
         api.has_param :initial_pitch, 'int'
         api.has_param :instant_game_entry_point_data, 'string'
+        api.has_param :is_ai_generated, 'bool'
         api.has_param :is_boost_intended, 'bool'
         api.has_param :is_explicit_share, 'bool'
         api.has_param :is_group_linking_post, 'bool'

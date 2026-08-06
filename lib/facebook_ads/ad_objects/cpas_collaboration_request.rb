@@ -23,6 +23,7 @@ module FacebookAds
       "EXTERNAL",
       "INTERNAL",
       "SELF_SERVE",
+      "SELF_SERVE_CONTACT_FORM",
     ]
 
 

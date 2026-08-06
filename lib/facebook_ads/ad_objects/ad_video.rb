@@ -345,6 +345,7 @@ module FacebookAds
     field :initial_heading, 'int'
     field :initial_pitch, 'int'
     field :instant_game_entry_point_data, 'string'
+    field :is_ai_generated, 'bool'
     field :is_boost_intended, 'bool'
     field :is_group_linking_post, 'bool'
     field :is_partnership_ad, 'bool'

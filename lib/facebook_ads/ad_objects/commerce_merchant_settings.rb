@@ -60,15 +60,6 @@ module FacebookAds
       edge.get 'ProductCatalog'
     end
 
-    has_edge :returns do |edge|
-      edge.get do |api|
-        api.has_param :end_time_created, 'datetime'
-        api.has_param :merchant_return_id, 'string'
-        api.has_param :start_time_created, 'datetime'
-        api.has_param :statuses, { list: { enum: %w{APPROVED DISAPPROVED MERCHANT_MARKED_COMPLETED REFUNDED REQUESTED }} }
-      end
-    end
-
     has_edge :setup_status do |edge|
       edge.get 'CommerceMerchantSettingsSetupStatus'
     end
@@ -86,10 +77,6 @@ module FacebookAds
 
     has_edge :shops do |edge|
       edge.get 'Shop'
-    end
-
-    has_edge :tax_settings do |edge|
-      edge.get
     end
 
   end

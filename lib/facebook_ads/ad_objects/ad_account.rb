@@ -98,6 +98,7 @@ module FacebookAds
       "FEED_DNM",
       "FEED_NESTED_DNM",
       "FEED_RELAXED",
+      "FEED_SELECT",
       "FEED_STANDARD",
       "FEED_STRICT",
       "UNINITIALIZED",
@@ -242,6 +243,7 @@ module FacebookAds
       edge.post 'AdAccountBusinessConstraints' do |api|
         api.has_param :audience_controls, 'object'
         api.has_param :placement_controls, 'object'
+        api.has_param :placement_controls_per_objective, 'object'
       end
     end
 
@@ -451,6 +453,7 @@ module FacebookAds
         api.has_param :creative, 'AdCreative'
         api.has_param :creative_asset_groups_spec, 'object'
         api.has_param :creative_automation_spec, 'object'
+        api.has_param :dataset_split_specs, { list: 'hash' }
         api.has_param :date_format, 'string'
         api.has_param :display_sequence, 'int'
         api.has_param :draft_adgroup_id, 'string'
@@ -650,6 +653,7 @@ module FacebookAds
         api.has_param :initial_heading, 'int'
         api.has_param :initial_pitch, 'int'
         api.has_param :instant_game_entry_point_data, 'string'
+        api.has_param :is_ai_generated, 'bool'
         api.has_param :is_boost_intended, 'bool'
         api.has_param :is_group_linking_post, 'bool'
         api.has_param :is_partnership_ad, 'bool'
@@ -1349,6 +1353,7 @@ module FacebookAds
       end
       edge.post 'AdVideo' do |api|
         api.has_param :description, 'string'
+        api.has_param :is_ai_generated, 'bool'
         api.has_param :privacy, 'string'
         api.has_param :title, 'string'
         api.has_param :upload_phase, { enum: -> { AdVideo::UPLOAD_PHASE }}

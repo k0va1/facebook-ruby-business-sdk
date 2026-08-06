@@ -267,7 +267,6 @@ module FacebookAds
       end
       edge.post 'WhatsAppBusinessAccount' do |api|
         api.has_param :allow_category_change, 'bool'
-        api.has_param :bid_spec, 'hash'
         api.has_param :category, { enum: -> { WhatsAppBusinessAccount::CATEGORY }}
         api.has_param :components, { list: 'hash' }
         api.has_param :creative_sourcing_spec, 'hash'
@@ -286,6 +285,7 @@ module FacebookAds
         api.has_param :parameter_format, { enum: -> { WhatsAppBusinessAccount::PARAMETER_FORMAT }}
         api.has_param :product_set_id, 'string'
         api.has_param :send_type, { enum: -> { WhatsAppBusinessAccount::SEND_TYPE }}
+        api.has_param :source_template_id, 'int'
         api.has_param :sub_category, { enum: -> { WhatsAppBusinessAccount::SUB_CATEGORY }}
       end
     end

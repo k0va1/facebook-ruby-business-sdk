@@ -13,17 +13,10 @@ module FacebookAds
   # on github and we'll fix in our codegen framework. We'll not be able to accept
   # pull request for this class.
 
-  class CopyrightOwnershipTransfer < AdObject
+  class AdAccountInsightsFeatureSettingsPost < AdObject
 
-    field :assets, { list: 'object' }
-    field :has_ownership_been_updated, 'bool'
     field :id, 'string'
-    field :num_assets, 'int'
-    field :receiving_rights_holder_owner, 'object'
-    field :sending_rights_holder_owner, 'object'
-    field :status, 'string'
-    field :transfer_territories, { list: 'string' }
-    field :transfer_time, 'datetime'
+    has_no_get
     has_no_post
     has_no_delete
 

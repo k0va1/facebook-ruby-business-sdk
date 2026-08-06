@@ -332,6 +332,7 @@ module FacebookAds
     field :inline_link_click_ctr, 'string'
     field :inline_link_clicks, 'string'
     field :inline_post_engagement, 'string'
+    field :instagram_profile_follow, 'string'
     field :instagram_profile_visits, 'string'
     field :instagram_upcoming_event_reminders_set, 'string'
     field :instant_experience_clicks_to_open, 'string'
@@ -361,10 +362,6 @@ module FacebookAds
     field :marketing_messages_sent, 'string'
     field :marketing_messages_spend, 'string'
     field :marketing_messages_spend_currency, 'string'
-    field :marketing_messages_website_add_to_cart, 'string'
-    field :marketing_messages_website_initiate_checkout, 'string'
-    field :marketing_messages_website_purchase, 'string'
-    field :marketing_messages_website_purchase_values, 'string'
     field :messages_delivered, 'string'
     field :messages_delivered_ctr, 'string'
     field :mobile_app_purchase_roas, { list: 'AdsActionStats' }
@@ -378,6 +375,8 @@ module FacebookAds
     field :outbound_clicks, { list: 'AdsActionStats' }
     field :outbound_clicks_ctr, { list: 'AdsActionStats' }
     field :place_page_name, 'string'
+    field :playable_average_game_length, 'string'
+    field :playable_game_start_rate, 'string'
     field :product_group_retailer_id, 'string'
     field :product_retailer_id, 'string'
     field :product_views, 'string'

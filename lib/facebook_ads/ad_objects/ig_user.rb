@@ -147,7 +147,7 @@ module FacebookAds
         api.has_param :major_audience_device_type, { list: 'object' }
         api.has_param :major_audience_gender, { list: { enum: -> { IgUserExportForCam::MAJOR_AUDIENCE_GENDER }} }
         api.has_param :major_audience_states, { list: 'string' }
-        api.has_param :platform, { list: { enum: -> { IgUserExportForCam::PLATFORM }} }
+        api.has_param :platform, { enum: -> { IgUserExportForCam::PLATFORM }}
         api.has_param :query, 'string'
         api.has_param :recommendation_type, { enum: -> { IgUserExportForCam::RECOMMENDATION_TYPE }}
         api.has_param :reels_interaction_rate, 'object'
@@ -206,9 +206,12 @@ module FacebookAds
         api.has_param :image_url, 'string'
         api.has_param :is_ai_generated, 'bool'
         api.has_param :is_carousel_item, 'bool'
+        api.has_param :is_comment_prompt_used, 'bool'
         api.has_param :is_paid_partnership, 'bool'
+        api.has_param :is_poll_duration_extended, 'bool'
         api.has_param :location_id, 'string'
         api.has_param :media_type, 'string'
+        api.has_param :poll_attachment, 'string'
         api.has_param :product_tags, { list: 'hash' }
         api.has_param :share_to_feed, 'bool'
         api.has_param :thumb_offset, 'string'

@@ -116,7 +116,7 @@ module FacebookAds
       edge.delete do |api|
         api.has_param :uid, 'int'
       end
-      edge.post 'Group' do |api|
+      edge.post 'User' do |api|
         api.has_param :uid, 'int'
       end
     end
@@ -306,7 +306,7 @@ module FacebookAds
         api.has_param :email, 'string'
         api.has_param :member, 'int'
       end
-      edge.post 'Group' do |api|
+      edge.post 'User' do |api|
         api.has_param :email, 'string'
         api.has_param :from, 'int'
         api.has_param :member, 'int'
@@ -421,6 +421,7 @@ module FacebookAds
         api.has_param :initial_heading, 'int'
         api.has_param :initial_pitch, 'int'
         api.has_param :instant_game_entry_point_data, 'string'
+        api.has_param :is_ai_generated, 'bool'
         api.has_param :is_boost_intended, 'bool'
         api.has_param :is_explicit_share, 'bool'
         api.has_param :is_group_linking_post, 'bool'

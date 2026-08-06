@@ -135,6 +135,7 @@ module FacebookAds
     field :updated_time, 'datetime'
     field :adset_spec, 'AdSet'
     field :audience_id, 'string'
+    field :dataset_split_specs, { list: 'hash' }
     field :date_format, 'string'
     field :draft_adgroup_id, 'string'
     field :execution_options, { list: { enum: -> { EXECUTION_OPTIONS }} }

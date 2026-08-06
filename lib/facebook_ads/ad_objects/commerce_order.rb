@@ -48,24 +48,7 @@ module FacebookAds
     has_no_post
     has_no_delete
 
-    has_edge :cancellations do |edge|
-      edge.get
-    end
-
-    has_edge :items do |edge|
-      edge.get
-    end
-
-    has_edge :payments do |edge|
-      edge.get
-    end
-
-    has_edge :refunds do |edge|
-      edge.get
-    end
-
     has_edge :shipments do |edge|
-      edge.get
       edge.post 'CommerceOrder' do |api|
         api.has_param :external_redemption_link, 'string'
         api.has_param :external_shipment_id, 'string'

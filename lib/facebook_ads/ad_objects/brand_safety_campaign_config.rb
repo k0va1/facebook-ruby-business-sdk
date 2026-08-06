@@ -16,6 +16,9 @@ module FacebookAds
   class BrandSafetyCampaignConfig < AdObject
 
     field :comment_moderation_filter, 'string'
+    field :fb_comment_moderation_filter, 'string'
+    field :ig_comment_moderation_filter, 'string'
+    field :threads_comment_moderation_filter, 'string'
     has_no_id
     has_no_get
     has_no_post

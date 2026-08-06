@@ -75,7 +75,6 @@ module FacebookAds
         api.has_param :alt_text, 'string'
         api.has_param :audio_configuration, 'string'
         api.has_param :audio_name, 'string'
-        api.has_param :branded_content_sponsor_ids, { list: 'int' }
         api.has_param :caption, 'string'
         api.has_param :children, { list: 'string' }
         api.has_param :collaborators, { list: 'string' }
@@ -83,7 +82,6 @@ module FacebookAds
         api.has_param :image_url, 'string'
         api.has_param :is_ai_generated, 'bool'
         api.has_param :is_carousel_item, 'bool'
-        api.has_param :is_paid_partnership, 'bool'
         api.has_param :location_id, 'string'
         api.has_param :media_type, 'string'
         api.has_param :product_tags, { list: 'hash' }

@@ -13,15 +13,23 @@ module FacebookAds
   # on github and we'll fix in our codegen framework. We'll not be able to accept
   # pull request for this class.
 
-  class AdAccountFeaturePreferences < AdObject
+  class AdAccountInsightsFeatureSettings < AdObject
 
     field :id, 'string'
     has_no_get
     has_no_post
     has_no_delete
 
-    has_edge :feature_preferences do |edge|
-      edge.post 'AdAccountFeaturePreferencesPost'
+    has_edge :insights&#x2F;feature-settings&#x2F;list-features do |edge|
+      edge.get 'AdAccountInsightsFeatureSettingsListFeatures' do |api|
+        api.has_param :after, 'string'
+        api.has_param :before, 'string'
+        api.has_param :limit, 'int'
+      end
+    end
+
+    has_edge :insights&#x2F;feature-settings do |edge|
+      edge.post 'AdAccountInsightsFeatureSettingsPost'
     end
 
   end

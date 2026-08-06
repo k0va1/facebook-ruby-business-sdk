@@ -255,6 +255,7 @@ module FacebookAds
     field :ad_set_goal, 'AdCampaignGoal'
     field :adlabels, { list: 'AdLabel' }
     field :adset_schedule, { list: 'DayPart' }
+    field :anchor_event_attribution_window_days, 'int'
     field :asset_feed_id, 'string'
     field :attribution_count_type, 'string'
     field :attribution_spec, { list: 'AttributionSpec' }

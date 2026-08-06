@@ -62,10 +62,6 @@ module FacebookAds
       "MANAGE_AR",
     ]
 
-    STANDARD = [
-      "google",
-    ]
-
     ITEM_SUB_TYPE = [
       "APPLIANCES",
       "BABY_FEEDING",
@@ -107,6 +103,10 @@ module FacebookAds
       "PURCHASE_VIA_OFFER",
       "TEST",
       "VIEW_ITEM",
+    ]
+
+    STANDARD = [
+      "google",
     ]
 
 
@@ -323,10 +323,10 @@ module FacebookAds
       edge.get 'ProductCatalogHotelRoomsBatch' do |api|
         api.has_param :handle, 'string'
       end
-      edge.post 'ProductCatalog' do |api|
+      edge.post 'ProductCatalogHotelRoomsBatch' do |api|
         api.has_param :file, 'file'
         api.has_param :password, 'string'
-        api.has_param :standard, { enum: -> { ProductCatalog::STANDARD }}
+        api.has_param :standard, { enum: -> { ProductCatalogHotelRoomsBatch::STANDARD }}
         api.has_param :update_only, 'bool'
         api.has_param :url, 'string'
         api.has_param :username, 'string'
