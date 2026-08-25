@@ -96,6 +96,7 @@ module FacebookAds
     field :video_to_image, 'AdCreativeFeatureDetails'
     field :video_uncrop, 'AdCreativeFeatureDetails'
     field :video_uncrop_9x16_to_9x18, 'AdCreativeFeatureDetails'
+    field :video_voiceover, 'AdCreativeFeatureDetails'
     field :wa_mm_image_filtering, 'AdCreativeFeatureDetails'
     field :wa_mm_text_truncation_length, 'AdCreativeFeatureDetails'
     has_no_id

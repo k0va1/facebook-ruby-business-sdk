@@ -13,17 +13,16 @@ module FacebookAds
   # on github and we'll fix in our codegen framework. We'll not be able to accept
   # pull request for this class.
 
-  class PageAboutStoryComposedBlock < AdObject
+  class ProductCatalogMediaTitles < AdObject
 
-    field :depth, 'int'
-    field :entity_ranges, { list: 'PageAboutStoryComposedBlockEntityRanges' }
-    field :inline_style_ranges, { list: 'PageAboutStoryComposedBlockInlineStyle' }
-    field :text, 'string'
-    field :type, 'string'
-    has_no_id
+    field :id, 'string'
     has_no_get
     has_no_post
     has_no_delete
+
+    has_edge :media_titles do |edge|
+      edge.post 'ProductCatalogMediaTitlesPost'
+    end
 
   end
 end

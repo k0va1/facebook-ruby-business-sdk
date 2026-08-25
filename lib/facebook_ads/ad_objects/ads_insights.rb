@@ -73,6 +73,8 @@ module FacebookAds
       "ad_extension_domain",
       "ad_extension_url",
       "ad_format_asset",
+      "affiliate_click_region",
+      "affiliate_link_url",
       "age",
       "app_id",
       "body_asset",
@@ -123,9 +125,11 @@ module FacebookAds
       "media_text_content",
       "media_type",
       "mmm",
+      "msa_seller_name",
       "overlap_segment",
       "pa_creator_ig_handle",
       "place_page_id",
+      "placement_path",
       "platform_position",
       "postback_sequence_index",
       "product_brand_breakdown",
@@ -365,6 +369,7 @@ module FacebookAds
     field :messages_delivered, 'string'
     field :messages_delivered_ctr, 'string'
     field :mobile_app_purchase_roas, { list: 'AdsActionStats' }
+    field :msa_seller_budget, 'int'
     field :multi_event_conversion_attribution_setting, 'string'
     field :objective, 'string'
     field :objective_result_rate, { list: 'object' }
@@ -390,6 +395,7 @@ module FacebookAds
     field :result_rate, { list: 'object' }
     field :result_values_performance_indicator, 'string'
     field :results, { list: 'object' }
+    field :shop_clicks, 'string'
     field :shops_assisted_purchases, 'string'
     field :social_spend, 'string'
     field :spend, 'string'

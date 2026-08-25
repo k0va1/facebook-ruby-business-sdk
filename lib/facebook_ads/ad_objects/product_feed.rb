@@ -108,6 +108,7 @@ module FacebookAds
 
     USE_CASE = [
       "CREATOR_ASSET",
+      "OPEN_CATALOG_UCP",
     ]
 
 

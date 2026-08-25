@@ -95,33 +95,6 @@ module FacebookAds
       "PAUSED",
     ]
 
-    ATTRIBUTION_COUNT_TYPE = [
-      "ALL_CONVERSIONS",
-      "FIRST_CONVERSION",
-    ]
-
-    AUTOMATIC_MANUAL_STATE = [
-      "AUTOMATIC",
-      "MANUAL",
-      "UNSET",
-    ]
-
-    BUDGET_SOURCE = [
-      "NONE",
-      "RMN",
-    ]
-
-    COST_BIDDING_MODE = [
-      "BALANCED",
-      "COST_FOCUSED",
-      "VOLUME_FOCUSED",
-    ]
-
-    CREATIVE_SEQUENCE_REPETITION_PATTERN = [
-      "FULL_SEQUENCE",
-      "LAST_AD",
-    ]
-
     DATE_PRESET = [
       "DATA_MAXIMUM",
       "LAST_14D",
@@ -143,6 +116,28 @@ module FacebookAds
       "THIS_YEAR",
       "TODAY",
       "YESTERDAY",
+    ]
+
+    OPERATOR = [
+      "ALL",
+      "ANY",
+    ]
+
+    AUTOMATIC_MANUAL_STATE = [
+      "AUTOMATIC",
+      "MANUAL",
+      "UNSET",
+    ]
+
+    COST_BIDDING_MODE = [
+      "BALANCED",
+      "COST_FOCUSED",
+      "VOLUME_FOCUSED",
+    ]
+
+    CREATIVE_SEQUENCE_REPETITION_PATTERN = [
+      "FULL_SEQUENCE",
+      "LAST_AD",
     ]
 
     DESTINATION_TYPE = [
@@ -227,6 +222,7 @@ module FacebookAds
       "20",
       "21",
       "22",
+      "24",
     ]
 
     TUNE_FOR_CATEGORY = [
@@ -237,11 +233,6 @@ module FacebookAds
       "ISSUES_ELECTIONS_POLITICS",
       "NONE",
       "ONLINE_GAMBLING_AND_GAMING",
-    ]
-
-    OPERATOR = [
-      "ALL",
-      "ANY",
     ]
 
     STATUS_OPTION = [
@@ -339,20 +330,6 @@ module FacebookAds
     field :use_new_app_click, 'bool'
     field :value_rule_set_id, 'string'
     field :value_rules_applied, 'bool'
-    field :budget_schedule_specs, { list: 'object' }
-    field :budget_source, { enum: -> { BUDGET_SOURCE }}
-    field :budget_split_set_id, 'string'
-    field :campaign_spec, 'object'
-    field :daily_imps, 'int'
-    field :date_format, 'string'
-    field :execution_options, { list: { enum: -> { EXECUTION_OPTIONS }} }
-    field :is_sac_cfca_terms_certified, 'bool'
-    field :line_number, 'int'
-    field :rb_prediction_id, 'string'
-    field :time_start, 'datetime'
-    field :time_stop, 'datetime'
-    field :topline_id, 'string'
-    field :tune_for_category, { enum: -> { TUNE_FOR_CATEGORY }}
 
     has_edge :activities do |edge|
       edge.get 'AdActivity' do |api|

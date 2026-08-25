@@ -147,6 +147,7 @@ module FacebookAds
         api.has_param :major_audience_device_type, { list: 'object' }
         api.has_param :major_audience_gender, { list: { enum: -> { IgUserExportForCam::MAJOR_AUDIENCE_GENDER }} }
         api.has_param :major_audience_states, { list: 'string' }
+        api.has_param :page_name, 'string'
         api.has_param :platform, { enum: -> { IgUserExportForCam::PLATFORM }}
         api.has_param :query, 'string'
         api.has_param :recommendation_type, { enum: -> { IgUserExportForCam::RECOMMENDATION_TYPE }}

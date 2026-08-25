@@ -502,41 +502,41 @@ module FacebookAds
         api.has_param :time_range, 'hash'
         api.has_param :updated_since, 'int'
       end
-      edge.post 'AdSet' do |api|
+      edge.post do |api|
         api.has_param :ad_set_goal, 'hash'
         api.has_param :adlabels, { list: 'object' }
         api.has_param :adset_schedule, { list: 'object' }
-        api.has_param :attribution_count_type, { enum: -> { AdSet::ATTRIBUTION_COUNT_TYPE }}
+        api.has_param :attribution_count_type, { enum: %w{ALL_CONVERSIONS FIRST_CONVERSION }}
         api.has_param :attribution_spec, { list: 'hash' }
-        api.has_param :automatic_manual_state, { enum: -> { AdSet::AUTOMATIC_MANUAL_STATE }}
+        api.has_param :automatic_manual_state, { enum: %w{AUTOMATIC MANUAL UNSET }}
         api.has_param :bid_adjustments, 'object'
         api.has_param :bid_amount, 'int'
         api.has_param :bid_constraints, 'hash'
-        api.has_param :bid_strategy, { enum: -> { AdSet::BID_STRATEGY }}
-        api.has_param :billing_event, { enum: -> { AdSet::BILLING_EVENT }}
+        api.has_param :bid_strategy, { enum: %w{COST_CAP LOWEST_COST_WITHOUT_CAP LOWEST_COST_WITH_BID_CAP LOWEST_COST_WITH_MIN_ROAS }}
+        api.has_param :billing_event, { enum: %w{APP_INSTALLS CLICKS IMPRESSIONS LINK_CLICKS LISTING_INTERACTION NONE OFFER_CLAIMS PAGE_LIKES POST_ENGAGEMENT PURCHASE THRUPLAY }}
         api.has_param :brand_safety_config, 'hash'
         api.has_param :budget_schedule_specs, { list: 'object' }
-        api.has_param :budget_source, { enum: -> { AdSet::BUDGET_SOURCE }}
+        api.has_param :budget_source, { enum: %w{NONE RMN }}
         api.has_param :budget_split_set_id, 'string'
         api.has_param :campaign_attribution, 'object'
         api.has_param :campaign_id, 'string'
         api.has_param :campaign_spec, 'object'
-        api.has_param :cost_bidding_mode, { enum: -> { AdSet::COST_BIDDING_MODE }}
+        api.has_param :cost_bidding_mode, { enum: %w{BALANCED COST_FOCUSED VOLUME_FOCUSED }}
         api.has_param :creative_sequence, { list: 'string' }
-        api.has_param :creative_sequence_repetition_pattern, { enum: -> { AdSet::CREATIVE_SEQUENCE_REPETITION_PATTERN }}
+        api.has_param :creative_sequence_repetition_pattern, { enum: %w{FULL_SEQUENCE LAST_AD }}
         api.has_param :daily_budget, 'int'
         api.has_param :daily_imps, 'int'
         api.has_param :daily_min_spend_target, 'int'
         api.has_param :daily_spend_cap, 'int'
         api.has_param :date_format, 'string'
-        api.has_param :destination_type, { enum: -> { AdSet::DESTINATION_TYPE }}
+        api.has_param :destination_type, { enum: %w{APP APPLINKS_AUTOMATIC FACEBOOK FACEBOOK_LIVE FACEBOOK_PAGE IMAGINE INSTAGRAM_DIRECT INSTAGRAM_LIVE INSTAGRAM_PROFILE INSTAGRAM_PROFILE_AND_FACEBOOK_PAGE MESSAGING_INSTAGRAM_DIRECT_MESSENGER MESSAGING_INSTAGRAM_DIRECT_MESSENGER_WHATSAPP MESSAGING_INSTAGRAM_DIRECT_WHATSAPP MESSAGING_MESSENGER_WHATSAPP MESSENGER ON_AD ON_EVENT ON_PAGE ON_POST ON_VIDEO SHOP_AUTOMATIC WEBSITE WHATSAPP }}
         api.has_param :dsa_beneficiary, 'string'
         api.has_param :dsa_payor, 'string'
         api.has_param :end_time, 'datetime'
-        api.has_param :execution_options, { list: { enum: -> { AdSet::EXECUTION_OPTIONS }} }
+        api.has_param :execution_options, { list: { enum: %w{include_recommendations validate_only }} }
         api.has_param :existing_customer_budget_percentage, 'int'
         api.has_param :frequency_control_specs, { list: 'object' }
-        api.has_param :full_funnel_exploration_mode, { enum: -> { AdSet::FULL_FUNNEL_EXPLORATION_MODE }}
+        api.has_param :full_funnel_exploration_mode, { enum: %w{EXTENDED_EXPLORATION LIMITED_EXPLORATION NONE_EXPLORATION }}
         api.has_param :is_ba_skip_delayed_eligible, 'bool'
         api.has_param :is_budget_schedule_enabled, 'bool'
         api.has_param :is_dc_follow_optimized, 'bool'
@@ -554,21 +554,21 @@ module FacebookAds
         api.has_param :meta_moment_maker_spec, 'hash'
         api.has_param :min_budget_spend_percentage, 'int'
         api.has_param :multi_event_conversion_attribution_window_seconds, 'int'
-        api.has_param :multi_optimization_goal_weight, { enum: -> { AdSet::MULTI_OPTIMIZATION_GOAL_WEIGHT }}
+        api.has_param :multi_optimization_goal_weight, { enum: %w{BALANCED PREFER_EVENT PREFER_INSTALL UNDEFINED }}
         api.has_param :name, 'string'
-        api.has_param :optimization_goal, { enum: -> { AdSet::OPTIMIZATION_GOAL }}
-        api.has_param :optimization_sub_event, { enum: -> { AdSet::OPTIMIZATION_SUB_EVENT }}
+        api.has_param :optimization_goal, { enum: %w{ADVERTISER_SILOED_VALUE AD_RECALL_LIFT APP_INSTALLS APP_INSTALLS_AND_OFFSITE_CONVERSIONS AUTOMATIC_OBJECTIVE CONVERSATIONS DERIVED_EVENTS ENGAGED_PAGE_VIEWS ENGAGED_USERS EVENT_RESPONSES IMPRESSIONS IN_APP_VALUE LANDING_PAGE_VIEWS LEAD_GENERATION LINK_CLICKS MEANINGFUL_CALL_ATTEMPT MESSAGING_APPOINTMENT_CONVERSION MESSAGING_DEEP_CONVERSATION_AND_FOLLOW MESSAGING_PURCHASE_CONVERSION NONE OFFSITE_CONVERSIONS PAGE_LIKES POST_ENGAGEMENT PROFILE_AND_PAGE_ENGAGEMENT PROFILE_VISIT QUALITY_CALL QUALITY_LEAD REACH REMINDERS_SET SUBSCRIBERS THRUPLAY VALUE VISIT_INSTAGRAM_PROFILE }}
+        api.has_param :optimization_sub_event, { enum: %w{NONE POST_INTERACTION TRAVEL_INTENT TRAVEL_INTENT_BUCKET_01 TRAVEL_INTENT_BUCKET_02 TRAVEL_INTENT_BUCKET_03 TRAVEL_INTENT_BUCKET_04 TRAVEL_INTENT_BUCKET_05 TRAVEL_INTENT_NO_DESTINATION_INTENT TRIP_CONSIDERATION VIDEO_SOUND_ON }}
         api.has_param :pacing_type, { list: 'string' }
         api.has_param :placement_soft_opt_out, 'object'
         api.has_param :promoted_object, 'object'
         api.has_param :rb_prediction_id, 'string'
-        api.has_param :regional_regulated_categories, { list: { enum: -> { AdSet::REGIONAL_REGULATED_CATEGORIES }} }
+        api.has_param :regional_regulated_categories, { list: { enum: %w{0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 24 }} }
         api.has_param :regional_regulation_identities, 'hash'
         api.has_param :relative_value, 'double'
         api.has_param :rf_prediction_id, 'string'
         api.has_param :source_adset_id, 'string'
         api.has_param :start_time, 'datetime'
-        api.has_param :status, { enum: -> { AdSet::STATUS }}
+        api.has_param :status, { enum: %w{ACTIVE ARCHIVED DELETED PAUSED }}
         api.has_param :targeting, 'Targeting'
         api.has_param :time_based_ad_rotation_id_blocks, { list: { list: 'int' } }
         api.has_param :time_based_ad_rotation_intervals, { list: 'int' }
@@ -576,7 +576,7 @@ module FacebookAds
         api.has_param :time_stop, 'datetime'
         api.has_param :topline_id, 'string'
         api.has_param :trending_topics_spec, 'hash'
-        api.has_param :tune_for_category, { enum: -> { AdSet::TUNE_FOR_CATEGORY }}
+        api.has_param :tune_for_category, { enum: %w{CREDIT EMPLOYMENT FINANCIAL_PRODUCTS_SERVICES HOUSING ISSUES_ELECTIONS_POLITICS NONE ONLINE_GAMBLING_AND_GAMING }}
         api.has_param :value_rule_set_id, 'string'
         api.has_param :value_rules_applied, 'bool'
       end
@@ -1212,7 +1212,10 @@ module FacebookAds
     end
 
     has_edge :recommendations do |edge|
-      edge.get 'AdAccountRecommendations'
+      edge.get 'AdAccountRecommendations' do |api|
+        api.has_param :recommendation_names, { list: { enum: -> { AdAccountRecommendations::RECOMMENDATION_NAMES }} }
+        api.has_param :recommendation_stages, { list: { enum: -> { AdAccountRecommendations::RECOMMENDATION_STAGES }} }
+      end
       edge.post 'AdAccountRecommendations' do |api|
         api.has_param :asc_fragmentation_parameters, 'hash'
         api.has_param :autoflow_parameters, 'hash'
@@ -1247,7 +1250,9 @@ module FacebookAds
         api.has_param :excluded_category, 'string'
         api.has_param :include_nodes, 'bool'
         api.has_param :is_exclusion, 'bool'
+        api.has_param :is_reserved, 'bool'
         api.has_param :limit_type, { enum: -> { AdAccountTargetingUnified::LIMIT_TYPE }}
+        api.has_param :optimization_goal, { enum: -> { AdAccountTargetingUnified::OPTIMIZATION_GOAL }}
         api.has_param :regulated_categories, { list: { enum: -> { AdAccountTargetingUnified::REGULATED_CATEGORIES }} }
         api.has_param :regulated_countries, { list: { enum: -> { AdAccountTargetingUnified::REGULATED_COUNTRIES }} }
         api.has_param :whitelisted_types, { list: { enum: -> { AdAccountTargetingUnified::WHITELISTED_TYPES }} }
@@ -1262,8 +1267,10 @@ module FacebookAds
         api.has_param :is_account_level_brand_safety_exclusion, 'bool'
         api.has_param :is_account_level_employer_exclusion, 'bool'
         api.has_param :is_exclusion, 'bool'
+        api.has_param :is_reserved, 'bool'
         api.has_param :limit_type, { enum: -> { AdAccountTargetingUnified::LIMIT_TYPE }}
         api.has_param :objective, { enum: -> { AdAccountTargetingUnified::OBJECTIVE }}
+        api.has_param :optimization_goal, { enum: -> { AdAccountTargetingUnified::OPTIMIZATION_GOAL }}
         api.has_param :promoted_object, 'object'
         api.has_param :q, 'string'
         api.has_param :regulated_categories, { list: { enum: -> { AdAccountTargetingUnified::REGULATED_CATEGORIES }} }

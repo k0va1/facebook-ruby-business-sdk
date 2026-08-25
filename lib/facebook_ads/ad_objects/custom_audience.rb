@@ -95,6 +95,7 @@ module FacebookAds
     USAGE_RESTRICTION = [
       "EXCLUSION_ONLY",
       "NONE",
+      "NO_DERIVATIVES",
     ]
 
     USE_FOR_PRODUCTS = [

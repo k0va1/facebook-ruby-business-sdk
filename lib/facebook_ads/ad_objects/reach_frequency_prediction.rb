@@ -60,6 +60,7 @@ module FacebookAds
     field :campaign_id, 'string'
     field :campaign_time_start, 'datetime'
     field :campaign_time_stop, 'datetime'
+    field :cpm, 'int'
     field :currency, 'string'
     field :curve_budget_reach, 'ReachFrequencyEstimatesCurve'
     field :curve_reach, { list: 'int' }

@@ -506,6 +506,7 @@ module FacebookAds
         api.has_param :inactivity_window_hours, 'int'
         api.has_param :install_id, 'string'
         api.has_param :is_fb, 'bool'
+        api.has_param :is_paid, 'bool'
         api.has_param :meta_install_referrer, 'string'
         api.has_param :used_install_referrer, 'bool'
         api.has_param :view_attr_window, 'int'

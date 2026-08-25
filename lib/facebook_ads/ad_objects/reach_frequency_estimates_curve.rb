@@ -17,6 +17,7 @@ module FacebookAds
 
     field :budget, { list: 'int' }
     field :conversion, { list: 'int' }
+    field :cpm, { list: 'int' }
     field :impression, { list: 'int' }
     field :interpolated_reach, 'double'
     field :num_points, 'int'

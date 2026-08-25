@@ -821,6 +821,7 @@ module FacebookAds
     field :material, 'string'
     field :mobile_link, 'string'
     field :name, 'string'
+    field :native_commerce, 'bool'
     field :offer_disclaimer, 'string'
     field :offer_disclaimer_url, 'string'
     field :ordering_index, 'int'
@@ -831,6 +832,7 @@ module FacebookAds
     field :post_conversion_signal_based_enforcement_appeal_eligibility, 'bool'
     field :price, 'string'
     field :product_catalog, 'ProductCatalog'
+    field :product_disclosures, { list: 'ProductItemProductDisclosure' }
     field :product_feed, 'ProductFeed'
     field :product_group, 'ProductGroup'
     field :product_local_info, 'ProductItemLocalInfo'

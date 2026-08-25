@@ -547,6 +547,7 @@ module FacebookAds
 
     RECOMMENDATION_TYPE = [
       "high_ad_performance",
+      "interested_in_collaboration",
       "most_ads_experience",
       "most_relevant_for_me",
       "similar_audience",
@@ -557,6 +558,7 @@ module FacebookAds
     field :age_bucket, 'string'
     field :badges, { list: 'string' }
     field :biography, 'string'
+    field :category, 'string'
     field :country, 'string'
     field :email, 'string'
     field :gender, 'string'

@@ -31,6 +31,7 @@ module FacebookAds
     field :ad_account_name, 'string'
     field :brands, { list: 'string' }
     field :catalog_segment, 'ProductCatalog'
+    field :collaborative_ads_share_settings, 'CollaborativeAdsShareSettings'
     field :contact_email, 'string'
     field :contact_first_name, 'string'
     field :contact_last_name, 'string'

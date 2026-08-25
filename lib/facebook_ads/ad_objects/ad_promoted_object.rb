@@ -116,6 +116,7 @@ module FacebookAds
     field :full_funnel_objective, { enum: -> { FULL_FUNNEL_OBJECTIVE }}
     field :fundraiser_campaign_id, 'string'
     field :instagram_actor_id, 'string'
+    field :is_catalog_user_acknowledged, 'bool'
     field :job_listing_id, 'string'
     field :lead_ads_custom_event_str, 'string'
     field :lead_ads_custom_event_type, { enum: -> { LEAD_ADS_CUSTOM_EVENT_TYPE }}

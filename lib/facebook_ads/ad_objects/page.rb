@@ -107,6 +107,7 @@ module FacebookAds
       "IPTC",
       "IPTC_METADATA_EDITED",
       "NONE",
+      "PAIGM_CLASSIFIER",
     ]
 
     PICKUP_OPTIONS = [
@@ -1326,6 +1327,7 @@ module FacebookAds
         api.has_param :backdated_time, 'datetime'
         api.has_param :backdated_time_granularity, { enum: -> { Photo::BACKDATED_TIME_GRANULARITY }}
         api.has_param :caption, 'string'
+        api.has_param :composer_entry_point, 'string'
         api.has_param :composer_session_id, 'string'
         api.has_param :direct_share_status, 'int'
         api.has_param :feed_targeting, 'object'
